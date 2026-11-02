@@ -97,6 +97,10 @@ h3 { margin: 0 0 8px; font-size: 1.1rem; }
 .badge { margin-left: 8px; background: var(--accent); color: var(--accent-ink); border-radius: 999px; padding: 2px 10px; font-size: .7rem; letter-spacing: .04em; }
 .featured { grid-column: 1 / -1; border-color: var(--accent); }
 
+.award { border-color: var(--accent); max-width: 760px; }
+.award .cat { margin: 0 0 8px; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.award p { margin: 0; color: var(--muted); }
+
 /* contact */
 .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .tile { text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
