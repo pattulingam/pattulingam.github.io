@@ -127,11 +127,25 @@ h3 { margin: 0 0 8px; font-size: 1.1rem; }
   .hero { padding-top: 56px; }
 }
 
-/* print: used by "Download PDF" */
+/* print: used by "Download PDF" - always light, everything visible */
 @media print {
+  :root, :root[data-theme="dark"], :root:not([data-theme="light"]) {
+    --bg: #ffffff; --surface: #ffffff; --text: #1d2330; --muted: #444b5a; --line: #cfd3dc;
+    --accent: #0f766e; --accent-ink: #ffffff; --accent-soft: #e3f4f1; --shadow: none;
+  }
+  @page { margin: 14mm; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
   .nav, .actions, .foot a, .theme-btn { display: none !important; }
-  body { background: #fff; color: #000; }
-  .reveal { opacity: 1; transform: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  .reveal, .reveal.in { opacity: 1 !important; transform: none !important; transition: none !important; }
   .card, .facts, .sub { box-shadow: none; }
-  section.wrap { padding-top: 24px; break-inside: avoid-page; }
+  section.wrap { padding-top: 18px; break-inside: auto; page-break-inside: auto; }
+  .hero { padding-top: 0; }
+  h2, h3, h4 { break-after: avoid; page-break-after: avoid; }
+  .card, .timeline > li > .sub, .facts { break-inside: avoid; page-break-inside: avoid; }
+  .grid3 { grid-template-columns: repeat(3, 1fr); }
+  .grid2 { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1.6fr 1fr; }
+  .contact { grid-template-columns: repeat(3, 1fr); }
+  .featured { grid-column: 1 / -1; }
 }

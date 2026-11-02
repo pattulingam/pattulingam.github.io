@@ -27,8 +27,19 @@
     }
   });
 
-  // Download PDF via the browser's print dialog (Save as PDF)
-  document.getElementById('printBtn').addEventListener('click', function () { window.print(); });
+  // Download PDF via the browser's print dialog (Save as PDF).
+  // Before printing, show every section and set the counters to their final values.
+  function prepareForPrint() {
+    document.querySelectorAll('.reveal').forEach(function (s) { s.classList.add('in'); });
+    document.querySelectorAll('[data-count]').forEach(function (el) {
+      el.textContent = el.getAttribute('data-count') + (el.getAttribute('data-suffix') || '');
+    });
+  }
+  window.addEventListener('beforeprint', prepareForPrint);
+  document.getElementById('printBtn').addEventListener('click', function () {
+    prepareForPrint();
+    window.print();
+  });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
