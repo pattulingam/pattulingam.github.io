@@ -36,7 +36,7 @@ section.wrap { padding-top: 72px; padding-bottom: 8px; }
 /* nav */
 .nav { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 60px; }
-.logo { font-weight: 800; letter-spacing: .04em; text-decoration: none; color: var(--accent); font-size: 1.15rem; }
+.logo { font-weight: 800; letter-spacing: .01em; white-space: nowrap; text-decoration: none; color: var(--accent); font-size: 1.15rem; }
 nav { display: flex; align-items: center; gap: 22px; }
 nav a { text-decoration: none; color: var(--muted); font-size: .95rem; }
 nav a:hover { color: var(--text); }
