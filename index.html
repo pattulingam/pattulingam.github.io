@@ -107,7 +107,7 @@
             <li>Test system-interface items and add new products through the batch process.</li>
             <li>Deploy applications on WildFly, confirming successful builds and stable performance.</li>
             <li>Log, track and verify defects with developers; support business stakeholders in sprint and enhancement discussions with findings and recommendations.</li>
-            <li>Use AI-assisted tools for test-case creation, script development and debugging, and built an agent that generates test cases and integration test plans from JIRA stories, scope documents and estimates.</li>
+            <li>Use AI-assisted tools for test-case creation, script development and debugging, and built a client-specific agent that generates test cases and integration test plans from JIRA stories, scope documents and estimates in the client's standard plan format.</li>
           </ul>
           <div class="sub">
             <h4>American Family Life Insurance</h4>
@@ -134,8 +134,8 @@
       <div class="grid2">
         <article class="card project featured">
           <p class="cat">QA automation <span class="badge">Featured</span></p>
-          <h3>AI test case and test plan generator</h3>
-          <p>A Python agent that turns requirements into QA deliverables. It reads a JIRA story with its acceptance criteria, comments, screenshots and linked Confluence documents, then generates manual test cases. A second mode builds a standard Integration Test Plan from a scope document and an estimate: scenarios and case counts come from the estimate, behaviour and expected results from the scope, and conflicts between the two are flagged. Output goes to Excel, JSON or Markdown, and the saved plan can be edited and rebuilt without calling the model. Works with OpenAI or Anthropic models, and ships with a Cursor skill.</p>
+          <h3>Client-specific AI test case generator</h3>
+          <p>An app I developed to generate test cases and integration test plans for a specific insurance client. It follows that client's change-order process and plan format, so every ticket produces the same standard workbook. It reads a JIRA story with its acceptance criteria, comments, screenshots and linked Confluence documents to generate test cases. For change requests it takes the scope document and the estimate: scenarios and case counts come from the estimate, behaviour and expected results from the scope, and conflicts between the two are flagged. Output goes to Excel, JSON or Markdown, and the saved plan can be edited and rebuilt without calling the model. Works with OpenAI or Anthropic models and ships with a Cursor skill.</p>
           <div class="tags small"><span>Python</span><span>LLM (OpenAI / Anthropic)</span><span>JIRA API</span><span>Confluence API</span><span>Pydantic</span><span>Typer</span><span>openpyxl</span></div>
         </article>
         <article class="card project">
