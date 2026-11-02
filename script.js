@@ -27,8 +27,7 @@
     }
   });
 
-  // Download PDF via the browser's print dialog (Save as PDF).
-  // Before printing, show every section and set the counters to their final values.
+  // Printing (Ctrl+P): show every section and the final counter values.
   function prepareForPrint() {
     document.querySelectorAll('.reveal').forEach(function (s) { s.classList.add('in'); });
     document.querySelectorAll('[data-count]').forEach(function (el) {
@@ -36,10 +35,6 @@
     });
   }
   window.addEventListener('beforeprint', prepareForPrint);
-  document.getElementById('printBtn').addEventListener('click', function () {
-    prepareForPrint();
-    window.print();
-  });
 
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -59,6 +54,7 @@
   }
   var counters = document.querySelectorAll('[data-count]');
   if ('IntersectionObserver' in window) {
+    if (!reduce) counters.forEach(function (c) { c.textContent = '0'; });
     var co = new IntersectionObserver(function (entries) {
       entries.forEach(function (en) {
         if (en.isIntersecting) { countUp(en.target); co.unobserve(en.target); }
@@ -77,4 +73,7 @@
     counters.forEach(countUp);
     document.querySelectorAll('.reveal').forEach(function (s) { s.classList.add('in'); });
   }
+
+  // Used when generating the PDF: index.html?print
+  if (/[?&]print/.test(location.search)) prepareForPrint();
 })();
