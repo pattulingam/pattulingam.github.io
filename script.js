@@ -27,6 +27,15 @@
     }
   });
 
+
+  // Download menu: close on outside click or Escape
+  var dl = document.getElementById('dl');
+  if (dl) {
+    document.addEventListener('click', function (e) { if (!dl.contains(e.target)) dl.removeAttribute('open'); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') dl.removeAttribute('open'); });
+    dl.addEventListener('click', function (e) { if (e.target.tagName === 'A') setTimeout(function () { dl.removeAttribute('open'); }, 100); });
+  }
+
   // Printing (Ctrl+P): show every section and the final counter values.
   function prepareForPrint() {
     document.querySelectorAll('.reveal').forEach(function (s) { s.classList.add('in'); });
