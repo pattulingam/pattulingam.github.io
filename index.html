@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Pattulingam K | Quality Engineer &amp; AI-Assisted Test Automation</title>
   <meta name="description" content="Software Quality Analyst II with 9+ years in insurance and reinsurance. Playwright and TypeScript automation, API testing and AI-assisted tools that generate test assets and remove manual checks." />
-  <link rel="stylesheet" href="style.css?v=5" />
+  <link rel="stylesheet" href="style.css?v=6" />
   <script>
     (function () {
       try {
@@ -93,7 +93,7 @@
         <article class="card">
           <h3>Expert</h3>
           <ul class="chips">
-            <li>Playwright with TypeScript</li><li>End-to-end test automation</li><li>Regression and integration testing</li><li>API testing with SoapUI and Postman</li><li>Test design from user stories and acceptance criteria</li><li>Defect management</li>
+            <li>Playwright with TypeScript</li><li>End-to-end test automation</li><li>Data-driven test automation</li><li>Regression and integration testing</li><li>API testing with SoapUI and Postman</li><li>Test design from user stories and acceptance criteria</li><li>Defect management</li>
           </ul>
         </article>
         <article class="card">
@@ -121,6 +121,7 @@
           </div>
           <ul>
             <li>Build and maintain Playwright and TypeScript automation for critical end-to-end business workflows, extending the suite with each release to widen regression coverage and speed up release cycles.</li>
+            <li>Built an end-to-end Playwright and TypeScript flow for annuity contract creation in the policy administration system: 20 steps from product selection through payment, exchange and replacement, and cash batch release, driven by Excel test data and producing Excel execution reports.</li>
             <li>Built a client-specific AI agent that generates test cases and integration test plans from JIRA stories, scope documents and estimates, in the client's standard plan format.</li>
             <li>Received the Deliver Value award under Values in Action for building AI tools that reduce day-to-day manual activity.</li>
             <li>Use AI-assisted tools across the testing cycle: test case creation, automation script development and debugging.</li>
@@ -157,13 +158,19 @@
 
     <section id="projects" class="wrap reveal">
       <h2><span>05 / </span>Projects</h2>
-      <p class="note">AI-assisted tools I built to replace repetitive manual checks in insurance and annuity workflows. They run locally, in the browser or on localhost, and files are never uploaded.</p>
+      <p class="note">Tools and automation I built to replace repetitive manual checks in insurance and annuity workflows. The file tools run locally, in the browser or on localhost, and never upload files.</p>
       <div class="grid2">
         <article class="card project featured">
           <p class="cat">AI for QA <span class="badge">Featured</span></p>
           <h3>Client-specific AI test case generator</h3>
           <p>An LLM-powered agent that generates test cases and integration test plans for a specific insurance client, following that client's change-order process and standard plan format. It reads a JIRA story with its acceptance criteria, comments, screenshots and linked Confluence documents. For change requests it combines the scope document and the estimate: the estimate sets scenarios and case counts, the scope sets behavior and expected results, and conflicts between the two are flagged for review. Output goes to Excel, JSON or Markdown; the saved plan can be edited and rebuilt without another model call. Works with OpenAI or Anthropic models and ships with a Cursor skill.</p>
           <div class="tags small"><span>Python</span><span>LLM agents</span><span>OpenAI / Anthropic</span><span>JIRA API</span><span>Confluence API</span><span>Pydantic</span><span>Typer</span><span>openpyxl</span></div>
+        </article>
+        <article class="card project">
+          <p class="cat">Test automation</p>
+          <h3>End-to-end contract creation automation</h3>
+          <p>An end-to-end Playwright and TypeScript test that creates an annuity contract in a policy administration system in 20 steps: company and product selection, contract amount, annuitant and joint owner details, beneficiaries, optional pages, writing and servicing agents, validation-error handling (retry and ignore dialogs, SSN correction), payment application, exchange and replacement set-up, cash batch creation and release, application processing and pending payment. Test data is read from Excel, so scenarios change without code edits, and a reporting utility writes a timestamped Excel report with a summary, step-by-step results and pass-rate statistics. A shorter 12-step data-entry check gives quick feedback in about three minutes. Runs on system Chrome with traces captured on retry.</p>
+          <div class="tags small"><span>Playwright</span><span>TypeScript</span><span>Data-driven testing</span><span>Excel (SheetJS)</span><span>Excel reporting</span></div>
         </article>
         <article class="card project">
           <p class="cat">Annuities</p>
