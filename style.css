@@ -121,6 +121,10 @@ h3 { margin: 0 0 8px; font-size: 1.1rem; }
 @media (max-width: 820px) { .dl-menu { position: static; width: 100%; margin-top: 8px; } .dl { width: 100%; } }
 @media print { .dl { display: none !important; } }
 
+.cert { margin-top: 16px; }
+.cert .cat { margin: 0 0 8px; font-size: .78rem; text-transform: uppercase; letter-spacing: .1em; color: var(--accent); font-weight: 600; }
+.cert a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
+
 /* contact */
 .contact { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .tile { text-decoration: none; display: flex; flex-direction: column; gap: 4px; }
